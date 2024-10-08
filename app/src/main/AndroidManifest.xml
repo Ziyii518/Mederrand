@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"
+        android:required="true" />
+
+    <application
+        android:name=".utils.MederrandApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/ThemeFullScreen"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".activities.medicine.OrderDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.medicine.SelectDriverActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.medicine.UserProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.medicine.OrderMedicineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.auth.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.medicine.MedicineDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MederrandApp" />
+        <activity
+            android:name=".activities.medicine.AddMedicineActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.auth.signup.WaitForVerificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.auth.signup.AlmostDoneActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.MessagesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MederrandApp" />
+        <activity
+            android:name=".activities.BottomNavigationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.SelectLocationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.auth.CountryCodesListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.auth.ResetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.auth.ForgotPasswordOtpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.auth.signup.SignupActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.auth.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.auth.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.WebViewActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/app_color_dark" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel"
+            android:value="@string/app_name" />
+
+        <service
+            android:name=".utils.notifications.MyFirebaseMessagingService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.POST_NOTIFICATIONS">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

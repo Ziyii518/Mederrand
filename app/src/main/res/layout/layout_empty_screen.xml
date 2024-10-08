@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+
+    <ImageView
+        android:id="@+id/emptyImage"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/no_medicine_ic"
+        android:contentDescription="@string/app_name" />
+    <TextView
+        android:id="@+id/textEmptyScreenHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:fontFamily="@font/montserrat_medium"
+        android:textColor="@color/app_color_dark"
+        android:layout_marginTop="10dp"
+        android:textAllCaps="true"
+        android:text="@string/text_no_medicines_added_yet"
+        />
+
+    <TextView
+        android:id="@+id/textEmptyScreenDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorDoveGray"
+        android:textSize="12sp"
+        android:paddingHorizontal="30sp"
+        android:text="@string/text_no_medicines_added_yet_description"
+        />
+
+
+</LinearLayout>

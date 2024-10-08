@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.medicine.SelectDriverActivity"
+    android:background="@color/app_color_bg"
+    >
+
+    <RelativeLayout
+        android:id="@+id/layoutTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/app_color_dark"
+        >
+
+        <RelativeLayout
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/_42sdp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/text_todo"
+                android:src="@drawable/back_ic"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/text_nearby_drivers"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layoutTopBar"
+        >
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <include
+            android:id="@+id/layoutLocationPermissionDenied"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/layout_location_permission_denied"
+            />
+    </RelativeLayout>
+
+
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_centerInParent="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/app_color_dark"
+        />
+
+</RelativeLayout>

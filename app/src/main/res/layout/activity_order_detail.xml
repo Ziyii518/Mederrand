@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.medicine.OrderDetailActivity"
+    android:background="@color/app_color_bg"
+    >
+    <RelativeLayout
+        android:id="@+id/layoutTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/app_color_dark"
+        >
+
+        <RelativeLayout
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/_42sdp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/text_todo"
+                android:src="@drawable/back_ic"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/text_order_detail"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layoutTopBar"
+        >
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/layoutButtons"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_60sdp"
+                >
+                <RelativeLayout
+                    android:id="@+id/layoutImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_200sdp">
+                    <ImageView
+                        android:id="@+id/prescriptionImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="@string/text_todo"
+                        />
+
+                    <ProgressBar
+                        android:id="@+id/imageLoading"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_centerInParent="true"
+                        android:theme="@style/ProgressBarStyle"/>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_black_5_alpha"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    />
+
+                <TextView
+                    android:id="@+id/textMedicineName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_medicine_name"
+                    android:fontFamily="@font/poppins_semi_bold"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10sdp"
+                    >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+                        <View
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:background="@drawable/bg_circle_app_color"
+                            />
+
+                        <View
+                            android:id="@+id/driverLine"
+                            android:layout_width="@dimen/_1sdp"
+                            android:layout_height="@dimen/_100sdp"
+                            android:background="@color/edit_text_hint_color"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginVertical="@dimen/_5sdp"
+                            />
+                        <View
+                            android:id="@+id/driverLocationIc"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:background="@drawable/bg_circle_app_color"
+                            />
+
+                        <View
+                            android:layout_width="@dimen/_1sdp"
+                            android:layout_height="@dimen/_100sdp"
+                            android:background="@color/edit_text_hint_color"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginVertical="@dimen/_5sdp"
+                            />
+
+                        <View
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:background="@drawable/bg_circle_app_color_outline"
+                            />
+
+                    </LinearLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        >
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:text="@string/text_pickup_location"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_10ssp"
+                                />
+
+                            <LinearLayout
+                                android:id="@+id/btnPharmacyProfile"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:orientation="horizontal"
+                                >
+                                <RelativeLayout
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:background="@drawable/bg_circle_app_color_outline"
+                                    android:padding="@dimen/_1sdp"
+                                    android:layout_gravity="center_vertical"
+                                    >
+                                    <ProgressBar
+                                        android:id="@+id/pharmacyProfileLoading"
+                                        android:layout_width="@dimen/_10sdp"
+                                        android:layout_height="@dimen/_10sdp"
+                                        android:visibility="visible"
+                                        android:layout_centerInParent="true"
+                                        android:theme="@style/ProgressBarStyle"
+                                        />
+
+                                    <com.makeramen.roundedimageview.RoundedImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        app:riv_corner_radius="@dimen/_3sdp"
+                                        android:src="@drawable/place_holder_ic"
+                                        app:riv_oval="true"
+                                        />
+                                </RelativeLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginHorizontal="@dimen/_8sdp"
+                                    android:layout_gravity="center_vertical"
+                                    >
+                                    <TextView
+                                        android:id="@+id/textPharmacyName"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_medium"
+                                        android:text="@string/text_full_name"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_10ssp"
+                                        />
+
+                                    <TextView
+                                        android:id="@+id/textPharmacyAddress"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_regular"
+                                        android:text="@string/text_home_address"
+                                        android:textColor="@color/colorDoveGray"
+                                        android:textSize="@dimen/_8ssp"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:maxLines="1"
+                                        />
+                                    <TextView
+                                        android:id="@+id/textPharmacyPhoneNumber"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_regular"
+                                        android:text="@string/text_phone_number"
+                                        android:textColor="@color/colorDoveGray"
+                                        android:textSize="@dimen/_8ssp"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:maxLines="1"
+                                        />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="@dimen/_123sdp"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:text="@string/text_driver_info"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_10ssp"
+                                />
+
+                            <LinearLayout
+                                android:id="@+id/btnDriverProfile"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:orientation="horizontal"
+                                >
+                                <RelativeLayout
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:background="@drawable/bg_circle_app_color_outline"
+                                    android:padding="@dimen/_1sdp"
+                                    android:layout_gravity="center_vertical"
+                                    >
+                                    <ProgressBar
+                                        android:id="@+id/driverProfileLoading"
+                                        android:layout_width="@dimen/_10sdp"
+                                        android:layout_height="@dimen/_10sdp"
+                                        android:visibility="visible"
+                                        android:layout_centerInParent="true"
+                                        android:theme="@style/ProgressBarStyle"
+                                        />
+
+                                    <com.makeramen.roundedimageview.RoundedImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        app:riv_corner_radius="@dimen/_3sdp"
+                                        android:src="@drawable/place_holder_ic"
+                                        app:riv_oval="true"
+                                        />
+                                </RelativeLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginHorizontal="@dimen/_8sdp"
+                                    android:layout_gravity="center_vertical"
+                                    >
+                                    <TextView
+                                        android:id="@+id/textDriverName"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_medium"
+                                        android:text="@string/text_full_name"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_10ssp"
+                                        />
+
+                                    <TextView
+                                        android:id="@+id/textDriverAddress"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_regular"
+                                        android:text="@string/text_home_address"
+                                        android:textColor="@color/colorDoveGray"
+                                        android:textSize="@dimen/_8ssp"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:maxLines="1"
+                                        />
+                                    <TextView
+                                        android:id="@+id/textDriverPhoneNumber"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_regular"
+                                        android:text="@string/text_phone_number"
+                                        android:textColor="@color/colorDoveGray"
+                                        android:textSize="@dimen/_8ssp"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:maxLines="1"
+                                        />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="@dimen/_250sdp"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:text="@string/text_drop_location"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_10ssp"
+                                />
+
+                            <LinearLayout
+                                android:id="@+id/btnBuyerProfile"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:orientation="horizontal"
+                                >
+                                <RelativeLayout
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:background="@drawable/bg_circle_app_color_outline"
+                                    android:padding="@dimen/_1sdp"
+                                    android:layout_gravity="center_vertical"
+                                    >
+                                    <ProgressBar
+                                        android:id="@+id/userProfileLoading"
+                                        android:layout_width="@dimen/_10sdp"
+                                        android:layout_height="@dimen/_10sdp"
+                                        android:visibility="visible"
+                                        android:layout_centerInParent="true"
+                                        android:theme="@style/ProgressBarStyle"
+                                        />
+
+                                    <com.makeramen.roundedimageview.RoundedImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        app:riv_corner_radius="@dimen/_3sdp"
+                                        android:src="@drawable/place_holder_ic"
+                                        app:riv_oval="true"
+                                        />
+                                </RelativeLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginHorizontal="@dimen/_8sdp"
+                                    android:layout_gravity="center_vertical"
+                                    >
+                                    <TextView
+                                        android:id="@+id/textUserName"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_medium"
+                                        android:text="@string/text_full_name"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_10ssp"
+                                        />
+
+                                    <TextView
+                                        android:id="@+id/textUserAddress"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_regular"
+                                        android:text="@string/text_home_address"
+                                        android:textColor="@color/colorDoveGray"
+                                        android:textSize="@dimen/_8ssp"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:maxLines="1"
+                                        />
+                                    <TextView
+                                        android:id="@+id/textUserPhoneNumber"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/montserrat_regular"
+                                        android:text="@string/text_phone_number"
+                                        android:textColor="@color/colorDoveGray"
+                                        android:textSize="@dimen/_8ssp"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:maxLines="1"
+                                        />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_black_5_alpha"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:weightSum="2"
+                    android:baselineAligned="false">
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_black_5_alpha"
+                        />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingVertical="@dimen/_10sdp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="@string/text_quantity_without_colon"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <TextView
+                            android:id="@+id/textOrderQuantity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="10"
+                            android:textColor="@color/colorDoveGray"
+                            android:textSize="@dimen/_10ssp"
+                            />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_black_5_alpha"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="@string/text_total_price_without_colon"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_9ssp" />
+
+                        <TextView
+                            android:id="@+id/textTotalPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="10"
+                            android:textColor="@color/colorDoveGray"
+                            android:textSize="@dimen/_10ssp"
+                            />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_black_5_alpha"
+                        />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_black_5_alpha"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+        <LinearLayout
+            android:id="@+id/layoutButtons"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_12sdp"
+            >
+            <LinearLayout
+                android:id="@+id/layoutAcceptButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                >
+
+                <RelativeLayout
+                    android:id="@+id/btnCancel"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_secondary_outline">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/text_cancel"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/btnAccept"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_secondary_other"
+                    android:elevation="@dimen/_1sdp"
+                    android:translationZ="@dimen/_1sdp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/text_accept"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/btnFindDriver"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/_6sdp"
+                android:background="@drawable/btn_secondary_other"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:id="@+id/textFindDriver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/text_find_driver"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_centerInParent="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/app_color_dark"
+        />
+</RelativeLayout>

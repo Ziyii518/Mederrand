@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.BottomNavigationActivity"
+    android:background="@drawable/app_background"
+    >
+    <View
+        android:id="@+id/layoutStatusBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        />
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layoutStatusBar"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/main_Container"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/transparent"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <RelativeLayout
+                    android:id="@+id/layout_topBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    >
+                    <RelativeLayout
+                        android:id="@+id/btnDrawer"
+                        android:layout_width="@dimen/_42sdp"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        >
+
+                        <ImageView
+                            android:id="@+id/menu_ic"
+                            android:layout_width="@dimen/_28sdp"
+                            android:layout_height="@dimen/_28sdp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/menu_ic" />
+
+                    </RelativeLayout>
+
+
+                    <ImageView
+                        android:id="@+id/logo"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:src="@drawable/app_logo"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        />
+                </RelativeLayout>
+
+                <fragment
+                    android:id="@+id/navHostFragment"
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:defaultNavHost="true"
+                    app:navGraph="@navigation/nav_graph"
+                    android:layout_below="@id/layout_topBar"
+                    android:layout_above="@id/bottomBar"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/bottomBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false"
+                    android:background="@drawable/bg_white_10sdp_rounded"
+                    android:layout_marginBottom="40dp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/btnHome"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
+
+                        <ImageView
+                            android:id="@+id/icHome"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/text_todo" />
+
+                        <TextView
+                            android:id="@+id/textHome"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_home"
+                            android:textColor="@color/colorDoveGray"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:textSize="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:singleLine="true"
+                            android:maxLines="1"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btnOrders"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
+
+                        <ImageView
+                            android:id="@+id/icOrders"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/text_todo"
+                            />
+
+                        <TextView
+                            android:id="@+id/textOrders"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_orders"
+                            android:textColor="@color/colorDoveGray"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:textSize="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:singleLine="true"
+                            android:maxLines="1"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btnInbox"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
+
+                        <ImageView
+                            android:id="@+id/icInbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/text_todo"
+                            />
+
+                        <TextView
+                            android:id="@+id/textInbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_inbox"
+                            android:textColor="@color/colorDoveGray"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:textSize="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:singleLine="true"
+                            android:maxLines="1"
+                            />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigationView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/nav_header"
+            app:menu="@menu/nav_menu"
+            android:background="@color/app_color_dark"
+            app:itemTextColor="@color/drawer_text_color_selector"
+            app:itemTextAppearance="@style/DrawerTextAppearance"
+            >
+
+            <RelativeLayout
+                android:id="@+id/btn_Logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@drawable/btn_primary"
+                android:paddingVertical="@dimen/_5sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_45sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:elevation="@dimen/_1sdp"
+                android:translationZ="@dimen/_1sdp"
+                >
+                <ImageView
+                    android:id="@+id/logout_ic"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/logout_ic"
+                    android:layout_centerVertical="true"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/logout_ic"
+                    android:text="@string/text_logout"
+                    android:textColor="@color/app_color_dark"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_12sdp"
+                    />
+            </RelativeLayout>
+
+        </com.google.android.material.navigation.NavigationView>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</RelativeLayout>

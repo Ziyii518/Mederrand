@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/_40sdp"
+    android:background="@drawable/bg_3sdp_edit_text_border_color"
+    android:layout_marginEnd="@dimen/_10sdp"
+    android:paddingHorizontal="@dimen/_30sdp"
+    >
+    <TextView
+        android:id="@+id/textDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/text_yes"
+        android:textColor="@color/edit_text_hint_color"
+        android:textSize="@dimen/_9ssp"
+        android:fontFamily="@font/montserrat_medium"
+        android:textAllCaps="true"
+        />
+</RelativeLayout>

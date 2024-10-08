@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ContactsFragment">
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+        <EditText
+            android:id="@+id/edSearch"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bg_3sdp_edit_text_border_color"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="@dimen/_10sdp"
+            android:hint="@string/text_search_contacts"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:importantForAutofill="no"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/edit_text_hint_color"
+            android:textSize="@dimen/_9ssp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/contactsRecyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:layout_marginTop="@dimen/_5sdp"
+            tools:listitem="@layout/design_invite_contact_friend_row"
+            />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/layoutPermissionDenied"
+        layout="@layout/layout_contacts_permissions_denied"
+        />
+
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_centerInParent="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/app_color_dark"
+        />
+
+</RelativeLayout>

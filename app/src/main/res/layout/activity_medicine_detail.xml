@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.medicine.MedicineDetailActivity"
+    android:background="@color/app_color_bg"
+    >
+
+    <RelativeLayout
+        android:id="@+id/layout_topBar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/app_color_dark"
+        >
+        <RelativeLayout
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/_42sdp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/back_ic"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/text_todo"
+                android:src="@drawable/back_ic"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/text_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toStartOf="@id/btnMenu"
+            android:layout_toEndOf="@id/btnBack"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/text_medicine_detail"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+        <RelativeLayout
+            android:id="@+id/btnMenu"
+            android:layout_width="@dimen/_42sdp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true">
+
+            <ImageView
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_13sdp"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/text_todo"
+                android:src="@drawable/horizontal_dots_ic" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_topBar"
+
+        >
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_60sdp"
+                >
+                <RelativeLayout
+                    android:id="@+id/layoutImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_200sdp">
+                    <ImageView
+                        android:id="@+id/medicineImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="@string/text_todo"
+                        />
+
+                    <ProgressBar
+                        android:id="@+id/imageLoading"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_centerInParent="true"
+                        android:theme="@style/ProgressBarStyle"/>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_black_5_alpha"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    />
+
+                <TextView
+                    android:id="@+id/textMedicineName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_medicine_name"
+                    android:fontFamily="@font/poppins_semi_bold"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/btnUserProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_10sdp"
+                    >
+
+                    <RelativeLayout
+                        android:id="@+id/layoutUserImage"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/bg_whit_3sdp_app_color_dark_outline"
+                        android:padding="@dimen/_1sdp"
+                        >
+                        <ProgressBar
+                            android:id="@+id/profileLoading"
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:visibility="visible"
+                            android:layout_centerInParent="true"
+                            android:theme="@style/ProgressBarStyle"
+                            />
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:riv_corner_radius="@dimen/_3sdp"
+                            android:src="@drawable/place_holder_ic"
+                            />
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_toEndOf="@id/layoutUserImage"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        >
+                        <TextView
+                            android:id="@+id/textFullName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="@string/text_full_name"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10ssp"
+                            />
+
+                        <TextView
+                            android:id="@+id/textUserName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="@string/text_username"
+                            android:textColor="@color/colorDoveGray"
+                            android:textSize="@dimen/_8ssp"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            />
+
+                        <TextView
+                            android:id="@+id/textUserAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="@string/text_home_address"
+                            android:textColor="@color/colorDoveGray"
+                            android:textSize="@dimen/_8ssp"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_black_5_alpha"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:weightSum="2"
+                    android:baselineAligned="false">
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_black_5_alpha"
+                        />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingVertical="@dimen/_10sdp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="@string/text_medicine_price"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <TextView
+                            android:id="@+id/textPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="10"
+                            android:textColor="@color/colorDoveGray"
+                            android:textSize="@dimen/_10ssp"
+                            />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_black_5_alpha"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="@string/text_medicine_stock"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_9ssp" />
+
+                        <TextView
+                            android:id="@+id/textStock"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="10"
+                            android:textColor="@color/colorDoveGray"
+                            android:textSize="@dimen/_10ssp"
+                            />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_black_5_alpha"
+                        />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_black_5_alpha"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/btnBuy"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/btn_secondary_other"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_30sdp"
+            android:text="@string/text_buy"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_centerInParent="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/app_color_dark"
+        />
+</RelativeLayout>

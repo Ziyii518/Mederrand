@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_45sdp"
+    android:background="@drawable/btn_primary"
+    android:layout_marginHorizontal="@dimen/_10sdp"
+    android:layout_marginTop="@dimen/_1sdp"
+    android:layout_marginBottom="@dimen/_9sdp"
+    android:paddingHorizontal="@dimen/_10sdp"
+    android:elevation="@dimen/_1sdp"
+    android:translationZ="@dimen/_1sdp"
+    >
+
+    <TextView
+        android:id="@+id/text_countryFlag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="🇵🇰"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15ssp" />
+
+    <TextView
+        android:id="@+id/text_countryName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_toEndOf="@id/text_countryFlag"
+        android:layout_toStartOf="@id/text_countryCode"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="Pakistan"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10ssp" />
+
+
+    <TextView
+        android:id="@+id/text_countryCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="+92"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11ssp" />
+
+</RelativeLayout>

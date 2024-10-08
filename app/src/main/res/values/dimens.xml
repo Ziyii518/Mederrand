@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- *********** Developed by Zoey ************ -->
+<resources>
+    <dimen name="text_size_double_extra_large">38sp</dimen>
+    <dimen name="text_size_extra_large">24sp</dimen>
+    <dimen name="text_size_large">20sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_in_between_medium_small">14sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+
+    <dimen name="custom_profile_image">50dp</dimen>
+    <dimen name="custom_profile_padding">2dp</dimen>
+</resources>

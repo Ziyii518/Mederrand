@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="inboxModel"
+            type="com.app.mederrand.apis.models.inbox.InboxDataModel" />
+    </data>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_primary"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_1sdp"
+        android:layout_marginBottom="@dimen/_9sdp"
+        android:padding="@dimen/_10sdp"
+        android:elevation="@dimen/_1sdp"
+        android:translationZ="@dimen/_1sdp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/textCommunityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@{inboxModel.userDataModel.name}"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            >
+            <TextView
+                android:id="@+id/textLastMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/textTime"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@{inboxModel.message}"
+                android:textColor="@color/colorDoveGray"
+                android:textSize="@dimen/_8ssp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:maxLines="2"
+                />
+
+            <TextView
+                android:id="@+id/textTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/colorDoveGray"
+                android:textSize="@dimen/_9ssp" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</layout>

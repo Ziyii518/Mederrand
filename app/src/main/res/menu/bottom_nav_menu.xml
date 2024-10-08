@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_fitnessFragment"
+        android:title="Fitness" />
+    <item
+        android:id="@+id/menu_homeFragment"
+        android:title="Home" />
+    <item
+        android:id="@+id/menu_communityFragment"
+        android:title="Community" />
+    <item
+        android:id="@+id/menu_emergencyFragment"
+        android:title="emergency" />
+
+</menu>

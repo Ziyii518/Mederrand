@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.medicine.AddMedicineActivity"
+    android:background="@drawable/app_background"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/layout_topBar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_marginTop="35dp"
+            >
+
+            <RelativeLayout
+                android:id="@+id/btnBack"
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                >
+
+                <ImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/text_back"
+                    android:src="@drawable/back_ic" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/text_add_medicine"
+                android:textColor="@color/app_color_dark"
+                android:textSize="@dimen/_12ssp" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/layoutMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/layout_topBar"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_35sdp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/text_add_medicine_to_the_mederrand_app"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/layoutImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_250sdp"
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/btnSelectPicture"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/bg_3sdp_edit_text_border_color_outline"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_gravity="center_horizontal"
+                            android:contentDescription="@string/text_todo"
+                            android:src="@drawable/gallery_ic" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="@string/text_select_image"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="@string/text_select_image_description"
+                            android:textAlignment="center"
+                            android:textColor="@color/edit_text_hint_color"
+                            android:textSize="@dimen/_10ssp" />
+
+
+                    </LinearLayout>
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/ivCover"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:transitionName="imageTransition"
+                        android:contentDescription="@string/text_todo"
+                        app:riv_corner_radius="@dimen/_3sdp"
+                        android:visibility="gone"
+                        />
+
+                    <RelativeLayout
+                        android:id="@+id/btnDelete"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_alignParentEnd="true"
+                        android:visibility="gone"
+                        >
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:src="@drawable/ic_close"
+                            android:contentDescription="@string/text_todo"
+                            />
+                    </RelativeLayout>
+
+                    <ProgressBar
+                        android:id="@+id/imageLoading"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_centerInParent="true"
+                        android:theme="@style/ProgressBarStyle"
+                        android:visibility="gone"
+                        />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/text_medicine_name"
+                    android:textColor="@color/edit_text_hint_color"
+                    android:textSize="@dimen/_10ssp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    />
+
+                <EditText
+                    android:id="@+id/editMedicineName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@drawable/bg_3sdp_edit_text_border_color"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:importantForAutofill="no"
+                    android:inputType="textPersonName|textCapWords"
+                    android:maxLength="70"
+                    android:maxLines="1"
+                    android:hint="@string/text_medicine_name"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/edit_text_hint_color"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_9ssp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_medicine_price"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="@dimen/_11ssp"
+                    android:textColor="@color/edit_text_hint_color"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    />
+
+                <EditText
+                    android:id="@+id/editMedicinePrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:inputType="numberDecimal"
+                    android:maxLength="10"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/edit_text_hint_color"
+                    android:background="@drawable/bg_3sdp_edit_text_border_color"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textSize="@dimen/_10ssp"
+                    android:maxLines="1"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:hint="@string/text_medicine_price"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_medicine_stock"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="@dimen/_11ssp"
+                    android:textColor="@color/edit_text_hint_color"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    />
+
+                <EditText
+                    android:id="@+id/editMedicineStock"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:inputType="number"
+                    android:digits="0123456789"
+                    android:maxLength="10"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/edit_text_hint_color"
+                    android:background="@drawable/bg_3sdp_edit_text_border_color"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textSize="@dimen/_10ssp"
+                    android:maxLines="1"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:hint="@string/text_medicine_stock"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/btnAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="end"
+                    android:background="@drawable/btn_secondary_other"
+                    android:paddingHorizontal="@dimen/_40sdp"
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/text_add"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/keyBoardVisibilityManager"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_260sdp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <include
+            android:id="@+id/layout_permissionDenied"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/layout_topBar"
+            layout="@layout/layout_gallery_permissions_denied"
+            />
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/loading"
+        layout="@layout/layout_form_loading"
+        />
+
+</RelativeLayout>
